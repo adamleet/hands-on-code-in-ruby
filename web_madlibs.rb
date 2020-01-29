@@ -21,12 +21,27 @@ __END__
 <head>
 <title> Madlibs </title>
 <style>
+body{
+    background-color: grey;
+}
+form {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -80px;
+}
 p {
     font-family: Helvetica;
     font-weight: bold;
 }
+h1{
+    text-align: center;
+}
 input{
     border: 1px solid grey;
+    border-radius: 4px;
+    position: center;
 }
 </style>
 </head>
