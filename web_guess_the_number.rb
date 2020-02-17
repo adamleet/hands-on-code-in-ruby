@@ -9,9 +9,9 @@ get '/guess' do
 end
 
 post '/guess' do
-    number = session[:number]
-    guess = params[:number]
-    session[:attempts] += 1
+    number = session[:number].to_i
+    guess = params[:number].to_i
+    session[:attempts] ? session[:attempts] +=1 : session[:attempts] = 1
     redirect to('/success') if guess == number 
         if guess < number then @message = "Your guess is too low, try again"
         elsif guess > number then @message = "Your guess is too high, try again"
@@ -20,7 +20,7 @@ post '/guess' do
 end
 
 get '/success' do
-    # attempts = session[:attempts].to_i
+    attempts = session[:attempts].to_i
     "Well done, you guessed the number at #{attempts} attempt#{'s' if attempts > 1}"
 end
 
